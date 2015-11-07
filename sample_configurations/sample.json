@@ -1,0 +1,28 @@
+{
+  "git": {
+    "remote": "https://username:password@github.com/username/my-website.git",
+    "author name": "Auto Updater",
+    "author email": "nobody@nowhere.com"
+  },
+  "content providers": [
+    {
+      "type": "flickr",
+      "parameters": {
+        "api key": "aaa",
+        "api secret": "bbb",
+        "user id": "ccc",
+        "photoset id": "ddd"
+      }
+    }
+  ],
+  "publishers": [
+    {
+      "type": "s3",
+      "parameters": {
+        "aws access key": "eee",
+        "aws secret key": "fff",
+        "bucket name": "ggg"
+      }
+    }
+  ]
+}

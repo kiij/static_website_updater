@@ -25,11 +25,12 @@ The code is structured in a way that new content sources and new publishing meth
 
 Before you start, you'll need Ruby installed. You'll also need the `bundler`, `jekyll`, and `jekyll-paginate` Ruby gems installed.
 
-After that, you can install this tool with the following commands:
+After that, you can install and use this tool with the following commands:
 
     git checkout https://github.com/kiij/static_website_updater.git
     cd static_website_updater
     sudo python setup.py install
+    static_website_updater my_config.json
 
 #### Using Vagrant
 
@@ -42,11 +43,10 @@ There's an included Vagrant configuration that you can use to do this:
     vagrant box add ubuntu/trusty32
     vagrant up
     vagrant ssh
+    
     cd /vagrant
     sudo python setup.py install
     /usr/local/bin/static_website_updater my_config.json
-    
-    
 
 ### Usage
 

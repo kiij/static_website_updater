@@ -1,0 +1,7 @@
+title: "Sample static_website_updater website"
+paginate: 5
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
+gems:
+ - jekyll-paginate
+exclude: ["Gemfile", "Gemfile.lock"]

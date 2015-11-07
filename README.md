@@ -14,14 +14,16 @@ The tool performs the following process to make this happen:
 The code is structured in a way that new content sources and new publishing methods can be added modularly as needed.
 
 *Currently supported content sources*
+
 - Flickr
 
 *Currently supported publishing methods*
+
 - Upload to S3
 
 ### Installation
 
-This tool involves dependencies on both Ruby and Python, which are both infamous for their issues with getting the right version of the language and all its dependencies installed correctly. If you're having problems, I highly suggest just running everything in a virtual machine using Vagrant or something similar.
+This tool depends on both Ruby and Python, which are both infamous for their issues with getting the right version of the language and all its dependencies installed correctly. If you're having problems, I highly suggest just running everything in a virtual machine using Vagrant or something similar.
 
 Before you start, you'll need Ruby installed. You'll also need the `bundler`, `jekyll`, and `jekyll-paginate` Ruby gems installed.
 

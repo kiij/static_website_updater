@@ -1,0 +1,34 @@
+{
+  "variables": {
+    "digitalocean_api_token": ""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "{{user `digitalocean_api_token`}}",
+      "image": "ubuntu-14-04-x64",
+      "region": "nyc2",
+      "size": "512mb"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 30",
+        "sudo apt-get -y update",
+        "sudo apt-get -y install puppet-common"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "./puppet/scripts/install_modules.sh"
+    },
+    {
+      "type": "puppet-masterless",
+      "manifest_file": "./puppet/manifests/application.pp",
+      "manifest_dir": "./puppet/manifests",
+      "module_paths": ["/etc/puppet/modules"]
+    }
+  ]
+}

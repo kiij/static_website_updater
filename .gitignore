@@ -4,6 +4,7 @@
 /.idea
 /virtualenv
 /*.json
-*.pyc
 Gemfile.lock
 */_site/*
+*.pyc
+*.swp

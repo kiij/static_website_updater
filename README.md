@@ -23,19 +23,34 @@ The code is structured in a way that new content sources and new publishing meth
 
 ### Installation
 
-This tool depends on both Ruby and Python, which are both infamous for their issues with getting the right version of the language and all its dependencies installed correctly. If you're having problems, I highly suggest just running everything in a virtual machine using Vagrant or something similar.
-
 Before you start, you'll need Ruby installed. You'll also need the `bundler`, `jekyll`, and `jekyll-paginate` Ruby gems installed.
 
 After that, you can install this tool with the following commands:
 
     git checkout https://github.com/kiij/static_website_updater.git
     cd static_website_updater
-    python setup.py install
+    sudo python setup.py install
+
+#### Using Vagrant
+
+This tool depends on Ruby and Python, both of which are infamous for making it difficult to get the right versions of the language and the necessary dependencies installed correctly. If you're having problems following the instructions in the previous section, I highly suggest just running everything in a virtual machine.
+
+There's an included Vagrant configuration that you can use to do this:
+
+    git checkout https://github.com/kiij/static_website_updater.git
+    cd static_website_updater
+    vagrant box add ubuntu/trusty32
+    vagrant up
+    vagrant ssh
+    cd /vagrant
+    sudo python setup.py install
+    /usr/local/bin/static_website_updater my_config.json
+    
+    
 
 ### Usage
 
-You need to tell the tool where to pull content from, as well as where to publish your final generated website. Also, you'll need to tell it where you Jekyll site's git repository is. This is all done through a JSON configuration file. For an example of the format, see `sample_configurations/sample.json`.
+You need to tell the tool where to pull content from, as well as where to publish your final generated website. Also, you'll need to tell it where your Jekyll site's git repository is. This is all done through a JSON configuration file. For an example of the format, see `sample_configurations/sample.json`.
 
 After you've created your own configuration file, just provide its filename as the argument when you run the tool:
 

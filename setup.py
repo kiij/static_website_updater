@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="static_website_updater",
     version="1",
-    packages=["static_website_updater"],
+    packages=find_packages(),
 
     install_requires=[
         "boto",

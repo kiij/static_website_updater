@@ -34,10 +34,6 @@ def do(git, jekyll_website, content_providers, publishers):
         print "No diff in git detected, aborting"
         return
 
-    # Push the content to git
-    print "Pushing to git"
-    git.push()
-
     # Build the website
     print "Building"
     jekyll_website.build()
@@ -46,6 +42,10 @@ def do(git, jekyll_website, content_providers, publishers):
     print "Publishing"
     for publisher in publishers:
         publisher.publish(jekyll_website)
+
+    # Push the content to git
+    print "Pushing to git"
+    git.push()
 
     # Exit
     print "Done"

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+SWU_COMMAND="/usr/local/bin/static_website_updater"
+SWU_CONFIG_FILE="/tmp/static_website_updater-`date +%s`.json"
+
+NAME="static_website_updater"
+
+case "$1" in
+start)
+    # Runs static_website_updater with the JSON provided from user-data
+    curl -o $SWU_CONFIG_FILE http://169.254.169.254/metadata/v1/user-data
+    printf "%-50s" "Starting $NAME..."
+    /usr/local/rvm/bin/rvmsudo $SWU_COMMAND $SWU_CONFIG_FILE
+    printf "%-50s" "Done. Cleaning up..."
+    rm $SWU_CONFIG_FILE
+;;
+
+*)
+
+echo "Usage: $0 start"
+exit 1
+
+esac

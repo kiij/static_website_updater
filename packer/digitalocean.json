@@ -26,9 +26,9 @@
     },
     {
       "type": "puppet-masterless",
-      "manifest_file": "./puppet/manifests/application.pp",
+      "manifest_file": "./puppet/manifests/default.pp",
       "manifest_dir": "./puppet/manifests",
-      "module_paths": ["/etc/puppet/modules"]
+      "module_paths": ["./puppet/modules", "/etc/puppet/modules"]
     }
   ]
 }

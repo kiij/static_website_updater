@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "application.pp"
+    puppet.manifest_file  = "vagrant.pp"
+    puppet.module_path = "puppet/modules"
   end
 end

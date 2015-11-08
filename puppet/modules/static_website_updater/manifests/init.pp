@@ -71,7 +71,7 @@ class static_website_updater (
         "static_website_updater.download":
           path    => "/usr/bin",
           cwd     => $working_directory,
-          command => "git clone -b test https://github.com/kiij/static_website_updater.git",
+          command => "git clone -b packer-test https://github.com/kiij/static_website_updater.git",
           require => [
             Package["git"],
             File[$working_directory]

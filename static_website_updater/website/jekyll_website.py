@@ -17,9 +17,9 @@ class JekyllWebsite(object):
     def build(self):
         orig_wd = os.getcwd()
         os.chdir(self.get_path())
-        os.system(["bundle", "install"])
-        os.system(["bundle", "exec", "jekyll", "build"])
-        #os.chdir(orig_wd)
+        os.system("bundle install")
+        os.system("bundle exec jekyll build")
+        os.chdir(orig_wd)
 
         return os.path.join(self.get_path(), "_site")
 

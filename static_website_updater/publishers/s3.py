@@ -1,6 +1,6 @@
 import os
 
-from boto.s3.connection import S3Connection
+from boto.s3.connection import S3Connection, OrdinaryCallingFormat
 from boto.s3.key import Key
 
 from static_website_updater.publishers.base import BasePublisher
@@ -8,7 +8,7 @@ from static_website_updater.publishers.base import BasePublisher
 
 class S3Publisher(BasePublisher):
     def __init__(self, aws_access_key, aws_secret_key, bucket_name):
-        self.conn = S3Connection(aws_access_key, aws_secret_key)
+        self.conn = S3Connection(aws_access_key, aws_secret_key, calling_format=OrdinaryCallingFormat())
         self.bucket = self.conn.get_bucket(bucket_name)
 
     def _delete_contents_of_bucket(self):
